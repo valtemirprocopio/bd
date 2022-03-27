@@ -1,0 +1,67 @@
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 12px;
+  }
+}
+
+
+
+.progress-title{
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 30px;
+}
+.progress{
+  height: 10px;
+  background: rgb(190, 190, 190);
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 40px;
+  overflow: visible;
+  position: relative;
+}
+.progress .progress-bar{
+  background: #fff;
+  border-radius: 0;
+  position: relative;
+  -webkit-animation: animate-positive 2s;
+  animation: animate-positive 2s;
+}
+.progress .progress-bar:before{
+  content: "";
+  width: 100%;
+  border-top: 10px double #2b2a29;
+  border-right: 25px solid #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress .progress-value{
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  position: absolute;
+  top: -32px;
+  right: -5px;
+}
+.progress.flask .progress-bar:before{ border-top-color: #2b2a29; }
+.progress.css .progress-bar:before{ border-top-color: #2b2a29; }
+.progress.bootstrap .progress-bar:before{ border-top-color: #2b2a29; }
+@-webkit-keyframes animate-positive{
+  0% { width: 0; }
+}
+@keyframes animate-positive{
+  0% { width: 0; }
+}

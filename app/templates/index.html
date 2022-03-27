@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<main class="px-3">
+    <img src="{{ url_for('static', filename='img/val.jpg')}}" alt="Max-width 50%" class="img-fluid rounded-circle">
+    <h1>Valtemir Procópio de Lima</h1>
+    <p class="lead">Apaixonado por tecnologias. <br>
+        Graduando do curso Licenciatura em Informática/IFRN. <br>
+        Técnico em Redes de Computadores/IMD-UFRN.</p>
+    <p class="lead">
+        <a class="link-dark" href="https://github.com/valtemirprocopio" >
+            <button type="button" class="btn btn-light">
+                <i class="bi bi-github"></i>
+            </button>
+        </a>
+        <a class="link-dark" href="https://github.com/valtemirprocopio" >
+            <button type="button" class="btn btn-light">
+                <i class="bi bi-instagram"></i>
+            </button>
+        </a>
+        <a class="link-dark" href="https://github.com/valtemirprocopio" >
+            <button type="button" class="btn btn-light">
+                <i class="bi bi-youtube"></i>
+            </button>
+        </a>
+    </p>
+</main>
+{% endblock %}
