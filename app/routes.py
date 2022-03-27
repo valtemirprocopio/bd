@@ -1,6 +1,7 @@
 from app import app
 from flask import render_template, flash, redirect, url_for
-from app.forms import LoginForm
+from app.forms_contato import ContatoForm
+from app.forms_login import LoginForm
 
 @app.route('/')
 @app.route('/index')
@@ -9,17 +10,18 @@ def index():
 
 @app.route('/contato', methods=['GET','POST'])
 def contato():
-    form = LoginForm()
-    if form.validate_on_submit():
+    forms_contato = ContatoForm()
+    if forms_contato.validate_on_submit():
         mensagem = flash('A mensagem foi enviada com sucesso.')
         return redirect('/index')
-    return render_template('contato.html', form=form)
+    return render_template('contato.html', forms_contato=forms_contato)
         
 
 @app.route('/features')
 def features():
     return render_template('features.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET','POST'])
 def login():
-    return render_template('/login.html')
+    forms_login = LoginForm()
+    return render_template('/login.html', forms_login=forms_login)
