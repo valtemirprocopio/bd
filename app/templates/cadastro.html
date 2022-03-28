@@ -1,0 +1,67 @@
+
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="d-flex justify-content-center">
+<form class="form-signin col-10" name="contact-form" action="" method="POST">
+        {{ forms_cadastro.csrf_token }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="57" fill="currentColor" class="bi bi-person-badge-fill" viewBox="0 0 16 16">
+            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
+        </svg>
+            <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0 mt-3">
+                            <label class="form-check-label" for="exampleCheck1">Nome</label>
+                            {{ forms_cadastro.nome(class="form-control",  placeholder="Digite seu nome")}}
+
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0 mt-3">
+                            <label>Seu e-mail</label>
+                           
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0 mt-3">
+                            <label>Assunto</label>
+                            {{ forms_cadastro.telefone(class="form-control",  placeholder="Digite seu telefone")}}
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12 mt-3">
+
+                        <div class="md-form">
+                            <label>Sua mensagem</label>
+                            {{ forms_cadastro.telefone(class="form-control",  rows="3", placeholder="Digite sua mensagem")}}
+
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+                <div class="text-center mt-3 text-md-left">
+                    <p>{{ forms_cadastro.submit(class="btn btn-primary") }}</p>
+                    
+                </div>
+            </form>
+</div>
+{% endblock %}
