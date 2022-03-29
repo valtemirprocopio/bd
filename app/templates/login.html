@@ -3,7 +3,7 @@
 
 {% block conteudo %}
 <div class="d-flex justify-content-center">
-<form class="form-signin col-7" name="contact-form" action="" method="POST">
+<form class="form-signin col-7" name="contact-form" action="" method="POST, GET">
         {{ forms_login.csrf_token }}
         <svg xmlns="http://www.w3.org/2000/svg" width="72" height="57" fill="currentColor" class="bi bi-person-circle mb-4" viewBox="0 0 16 16">
         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -16,7 +16,8 @@
       <label for="inputEmail" class="sr-only mb-1">Endereço de e-mail</label>
       {{ forms_login.email(class="form-control",  placeholder="Digite seu e-mail")}}
       <label for="inputPassword" class="sr-only ">Senha</label>
-      {{ forms_login.senha(class="form-control")}}      
+      {{ forms_login.senha(class="form-control")}} 
+           
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Lembrar senha

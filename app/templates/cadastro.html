@@ -3,7 +3,7 @@
 
 {% block conteudo %}
 <div class="d-flex justify-content-center">
-<form class="form-signin col-10" name="contact-form" action="" method="POST">
+<form class="form-signin col-10" name="contact-form" action="" method="POST, GET">
         {{ forms_cadastro.csrf_token }}
         <svg xmlns="http://www.w3.org/2000/svg" width="72" height="57" fill="currentColor" class="bi bi-person-badge-fill" viewBox="0 0 16 16">
             <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
@@ -13,9 +13,11 @@
                     <!--Grid column-->
                     <div class="col-md-6">
                         <div class="md-form mb-0 mt-3">
-                            <label class="form-check-label" for="exampleCheck1">Nome</label>
+                            {{ forms_cadastro.nome.label }}<br>
                             {{ forms_cadastro.nome(class="form-control",  placeholder="Digite seu nome")}}
-
+                            {% for error in forms_cadastro.nome.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                             {% endfor %}
                         </div>
                     </div>
                     <!--Grid column-->
@@ -23,8 +25,11 @@
                     <!--Grid column-->
                     <div class="col-md-6">
                         <div class="md-form mb-0 mt-3">
-                            <label>Seu e-mail</label>
-                           
+                            {{ forms_cadastro.email.label }}<br>
+                            {{ forms_cadastro.email(class="form-control",  placeholder="Digite seu e-mail")}}
+                            {% for error in forms_cadastro.email.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
                         </div>
                     </div>
                     <!--Grid column-->
@@ -34,27 +39,23 @@
 
                 <!--Grid row-->
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="md-form mb-0 mt-3">
-                            <label>Assunto</label>
-                            {{ forms_cadastro.telefone(class="form-control",  placeholder="Digite seu telefone")}}
+                            {{ forms_cadastro.senha.label }}<br>
+                            {{ forms_cadastro.senha(class="form-control",  placeholder="Digite a senha")}}
+                            {% for error in forms_cadastro.senha.errors %}
+                                 <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
                         </div>
                     </div>
-                </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-12 mt-3">
-
-                        <div class="md-form">
-                            <label>Sua mensagem</label>
-                            {{ forms_cadastro.telefone(class="form-control",  rows="3", placeholder="Digite sua mensagem")}}
-
+                    <div class="col-md-6">
+                        <div class="md-form mb-0 mt-3">
+                            {{ forms_cadastro.repete_senha.label }}<br>
+                            {{ forms_cadastro.repete_senha(class="form-control",  placeholder="Repita a senha")}}
+                            {% for error in forms_cadastro.repete_senha.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
                         </div>
-
                     </div>
                 </div>
                 <!--Grid row-->
