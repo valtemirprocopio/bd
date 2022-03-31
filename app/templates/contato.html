@@ -15,14 +15,14 @@
         <!--Grid column-->
         <div class="col-md-12 mb-md-0 mb-12">
             <form id="contact-form" name="contact-form" action="" method="POST">
-                {{ forms_contato.csrf_token }}
+                {{ form.csrf_token }}
                 <!--Grid row-->
                 <div class="row">
                     <!--Grid column-->
                     <div class="col-md-6">
                         <div class="md-form mb-0 mt-3">
                             <label class="form-check-label" for="exampleCheck1">Nome</label>
-                            {{ forms_contato.nome(class="form-control",  placeholder="Digite seu nome")}}
+                            {{ form.nome(class="form-control",  placeholder="Digite seu nome")}}
 
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                     <div class="col-md-6">
                         <div class="md-form mb-0 mt-3">
                             <label>Seu e-mail</label>
-                            {{ forms_contato.email(class="form-control",  placeholder="Digite seu e-mail")}}
+                            {{ form.email(class="form-control",  placeholder="Digite seu e-mail")}}
 
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="col-md-12">
                         <div class="md-form mb-0 mt-3">
                             <label>Assunto</label>
-                            {{ forms_contato.assunto(class="form-control",  placeholder="Digite o assunto da mensagem")}}
+                            {{ form.assunto(class="form-control",  placeholder="Digite o assunto da mensagem")}}
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
 
                         <div class="md-form">
                             <label>Sua mensagem</label>
-                            {{ forms_contato.mensagem(class="form-control",  rows="3", placeholder="Digite sua mensagem")}}
+                            {{ form.mensagem(class="form-control",  rows="3", placeholder="Digite sua mensagem")}}
 
                         </div>
 
@@ -68,14 +68,13 @@
                 </div>
                 <!--Grid row-->
                 <div class="text-center mt-3 text-md-left">
-                    <p>{{ forms_contato.submit(class="btn btn-primary") }}</p>
+                    <p>{{ form.submit(class="btn btn-primary") }}</p>
                     
                 </div>
             </form>
 
             
             <div class="status">
-                
             </div>
         </div>
         <!--Grid column-->
